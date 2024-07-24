@@ -87,10 +87,10 @@ func main() {
 		case "public":
 			address = public_address()
 		default:
-			usage("1")
+			usage("")
 		}
 	} else {
-		usage("2")
+		usage("")
 	}
 
 	fmt.Print(address)

@@ -1,12 +1,13 @@
 #!/bin/sh
 
 BINARY='/usr/local/bin'
+APP=ip
 
-echo "Building ip"
-go build ip.go
+echo "Building $APP"
+go build -ldflags="-s -w" $APP.go
 
-echo "Installing ip to $BINARY"
-install -v ip $BINARY
+echo "Installing $APP to $BINARY"
+install $APP $BINARY
 
 echo "Removing the build"
-rm ip
+rm $APP
